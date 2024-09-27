@@ -47,7 +47,7 @@ const searchImages = async () => {
       params: {
         query: searchQuery.value,
         per_page: 10,
-        client_id: 'YOUR_UNSPLASH_API_KEY' // Replace with your actual API key
+        client_id: 'YOUR_UNSPLASH_API_KEY'
       }
     })
     images.value = response.data.results
