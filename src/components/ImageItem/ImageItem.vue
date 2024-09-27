@@ -1,3 +1,16 @@
 <template src="./ImageItem.html"></template>
-<script src="./ImageItem.ts"></script>
 <style src="./ImageItem.scss" lang="scss" scoped></style>
+
+<script setup lang="ts">
+import { defineProps, defineEmits } from 'vue'
+
+const props = defineProps({
+  image: Object
+})
+
+const emit = defineEmits(['click'])
+
+const handleClick = () => {
+  emit('click', props.image)
+}
+</script>
