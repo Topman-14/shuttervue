@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <p v-if="loading && !fetched" class="status-display">
+    <p v-if="loading && !fetched && searchQuery" class="status-display">
       Searching for
       <span> "{{ searchQuery }}" </span>
     </p>
