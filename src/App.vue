@@ -25,7 +25,13 @@
       <SkeletonLoader v-for="n in 10" :key="n" />
     </template>
     <template v-else>
-      <ImageItem v-for="image in images" :key="image.id" :image="image" @click="openModal(image)" />
+      <ImageItem
+        v-for="(image, index) in images"
+        :key="image.id"
+        :image="image"
+        :index="index"
+        @click="openModal(image)"
+      />
     </template>
   </div>
   <ImageModal v-if="selectedImage" :image="selectedImage" @close="closeModal" />
@@ -35,13 +41,13 @@
 import { onMounted, ref } from 'vue'
 import axios from 'axios'
 import ImageItem from './components/ImageItem/ImageItem.vue'
-import ImageModal from './components/ImageModal/ImageModal'
+import ImageModal from './components/ImageModal/ImageModal.vue'
 import SkeletonLoader from './components/SkeletonLoader/SkeletonLoader.vue'
 import SearchIcon from './components/icons/SearchIcon.vue'
 
 const searchQuery = ref('')
 const images = ref<any[]>([])
-const loading = ref(false)
+const loading = ref(true)
 const fetched = ref(false)
 const selectedImage = ref(null)
 

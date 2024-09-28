@@ -52,9 +52,9 @@ body {
   background: #fffefe;
   width: clamp(300px, 80%, 800px);
   border-radius: 10px;
-  box-shadow: 7px 10px 55px -18px rgba(0, 0, 0, 0.35);
-  -webkit-box-shadow: 7px 10px 55px -18px rgba(0, 0, 0, 0.35);
-  -moz-box-shadow: 7px 10px 55px -18px rgba(0, 0, 0, 0.35);
+  box-shadow: 7px 10px 55px -18px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 7px 10px 55px -18px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 7px 10px 55px -18px rgba(0, 0, 0, 0.15);
   input {
     font-size: 16px;
     border: none;
@@ -83,7 +83,7 @@ body {
   font-family: inherit;
   color: #293654;
   font-weight: 600;
-  width: clamp(300px, 80%, 900px);
+  width: clamp(300px, 80%, 1200px);
   span {
     font-weight: inherit;
     color: #727d8e;
@@ -91,8 +91,12 @@ body {
 }
 .image-grid {
   display: grid;
+  row-gap: 32px;
+  column-gap: 48px;
+  grid-auto-flow: dense;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  grid-auto-rows: 10px;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1000px;
+  margin: -60px auto 0;
 }

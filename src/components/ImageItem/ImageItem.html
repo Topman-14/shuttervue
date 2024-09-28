@@ -1,3 +1,7 @@
-<div class="image-item">
+<div class="image-item" :class="{ 'middle-column': isMiddleColumn(index) }" @click="handleClick">
   <img :src="image.urls.small" :alt="image.alt_description" />
+  <div class="info">
+    <p>{{image.user?.first_name}} {{image.user?.last_name}}</p>
+    <p>{{image.user?.location}}</p>
+  </div>
 </div>

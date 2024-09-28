@@ -1,6 +1,10 @@
 <div class="modal-overlay" @click="$emit('close')">
   <div class="modal-content" @click.stop>
     <img :src="image.urls.regular" :alt="image.alt_description" />
-    <button class="close-button" @click="$emit('close')">&times;</button>
+    <div class="modal-info">
+      <p>{{image.user?.first_name}} {{image.user?.last_name}}</p>
+      <p>{{image.user?.location}}</p>
+    </div>
   </div>
+  <button class="close-button" @click="$emit('close')">&times;</button>
 </div>
