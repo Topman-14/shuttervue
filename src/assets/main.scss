@@ -87,6 +87,7 @@ body {
   span {
     font-weight: inherit;
     color: #727d8e;
+    text-transform: capitalize;
   }
 }
 .image-grid {
@@ -99,4 +100,16 @@ body {
   width: 100%;
   max-width: 1000px;
   margin: -60px auto 0;
+
+  grid-template-columns: 1fr;
+  padding: 0 20px 40px 20px;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 30px 50px 30px;
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

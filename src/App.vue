@@ -22,7 +22,7 @@
   </header>
   <div class="image-grid">
     <template v-if="loading">
-      <SkeletonLoader v-for="n in 10" :key="n" />
+      <SkeletonLoader v-for="n in 10" :key="n" :index="n - 1" />
     </template>
     <template v-else>
       <ImageItem
@@ -47,7 +47,7 @@ import SearchIcon from './components/icons/SearchIcon.vue'
 
 const searchQuery = ref('')
 const images = ref<any[]>([])
-const loading = ref(true)
+const loading = ref(false)
 const fetched = ref(false)
 const selectedImage = ref(null)
 
